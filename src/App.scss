@@ -1,0 +1,14 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.App {
+  border: 1px solid teal;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 10px;
+}

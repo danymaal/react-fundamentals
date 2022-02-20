@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from 'react';
+
+import './App.scss';
+import Header from './components/Header';
+import Button from './components/Button';
+import Tasks from './components/Tasks';
 
 function App() {
+  const clicked = () => {
+    console.log('clicked!');
+  };
+
+  const [tasks, setTask] = useState([
+    { id: 1, text: 'Appointment', day: 'Fab', remider: true },
+    { id: 2, text: 'Appointment 2', day: 'Fab', remider: true },
+    { id: 3, text: 'Appointment 3', day: 'Fab', remider: false },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="I like React" />
+      <Button onClick={clicked} text={'Pickles'} color="teal" />
+      <Tasks tasks={tasks} />
     </div>
   );
 }
